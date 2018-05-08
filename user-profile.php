@@ -13,7 +13,7 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">CSRF Protection</a>
+          <a class="navbar-brand" href="index.php">CSRF Protection</a>
         </div>
         <ul class="nav navbar-nav">
           <?php
@@ -50,7 +50,7 @@
 
                 <?php if(isset($_COOKIE['session_cookie'])) {
                 echo "
-						<form action='endpoint.php' method='POST' enctype='multipart/form-data'>
+						<form action='csrf-validate.php' method='POST' enctype='multipart/form-data'>
                             	<!-- CSRF Token -->
                             	<input type='hidden' name='csrf_Token' id='csrf_Token' value=''>
                                 <!--  -->
@@ -92,7 +92,7 @@
 
 						var request="true";
 						$.ajax({
-						url:"csrf.php",
+						url:"csrf-gen.php",
 						method:"POST",
 						data:{request:request},
 						dataType:"JSON",
